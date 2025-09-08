@@ -2,7 +2,7 @@
 
 A React + TypeScript + Vite frontend for the DesignSight AI-powered design feedback platform, built specifically for Slack teams.
 
-## 🚀 Features
+## Features
 
 - **Slack-Personalized Design**: Built with Slack teams in mind, featuring familiar UI patterns and workflows
 - **Coordinate-Anchored Feedback**: Interactive overlay system showing feedback directly on uploaded designs
@@ -12,7 +12,7 @@ A React + TypeScript + Vite frontend for the DesignSight AI-powered design feedb
 - **Human-Centered Design**: Following UI/UX principles with organic, imperfect design elements
 - **Export Features**: PDF and JSON export for development handoff
 
-## 🛠 Tech Stack
+## Tech Stack
 
 - **Framework**: React 18 + TypeScript
 - **Build Tool**: Vite
@@ -22,12 +22,12 @@ A React + TypeScript + Vite frontend for the DesignSight AI-powered design feedb
 - **HTTP Client**: Axios
 - **Routing**: React Router DOM
 
-## 📋 Prerequisites
+## Prerequisites
 
 - Node.js 18+
 - Backend server running on `http://localhost:5000`
 
-## 🚀 Quick Start
+## Quick Start
 
 ### 1. Install Dependencies
 

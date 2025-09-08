@@ -1,12 +1,12 @@
-# 🧪 DesignSight Testing Guide
+# DesignSight Testing Guide
 
-## 📋 **Testing Overview**
+## Testing Overview
 
 DesignSight now includes comprehensive testing coverage for both backend and frontend components, ensuring reliability and maintainability.
 
 ---
 
-## 🚀 **Quick Start**
+## Quick Start
 
 ### **Run All Tests**
 ```bash

@@ -2,7 +2,7 @@
 
 AI-powered design feedback platform backend built with Express.js, MongoDB, and real AI vision models.
 
-## 🚀 Features
+## Features
 
 - **Image Upload & Processing**: Handle PNG, JPEG, JPG, WebP files up to 10MB
 - **AI-Powered Analysis**: Integration with OpenAI GPT-4V, Anthropic Claude, and Google Gemini
@@ -12,7 +12,7 @@ AI-powered design feedback platform backend built with Express.js, MongoDB, and 
 - **Project Management**: Organize images and feedback by projects
 - **Real-Time Processing**: Background AI analysis with status tracking
 
-## 🛠 Tech Stack
+## Tech Stack
 
 - **Runtime**: Node.js 18+
 - **Framework**: Express.js
@@ -22,7 +22,7 @@ AI-powered design feedback platform backend built with Express.js, MongoDB, and 
 - **Security**: Helmet, CORS, Rate Limiting
 - **Containerization**: Docker & Docker Compose
 
-## 📋 Prerequisites
+## Prerequisites
 
 - Node.js 18+ 
 - MongoDB (local or Docker)
@@ -31,7 +31,7 @@ AI-powered design feedback platform backend built with Express.js, MongoDB, and 
   - Anthropic API key for Claude Vision
   - Google API key for Gemini Vision
 
-## 🚀 Quick Start
+## Quick Start
 
 ### 1. Clone and Install
 

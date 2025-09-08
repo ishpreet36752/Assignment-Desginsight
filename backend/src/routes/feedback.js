@@ -12,7 +12,7 @@ const router = express.Router();
 router.get('/:imageId', authenticateToken, async (req, res) => {
   try {
     const { imageId } = req.params;
-    console.log('🔍 Feedback route called for imageId:', imageId);
+    console.log('Feedback route called for imageId:', imageId);
     const { 
       role, 
       category, 
@@ -37,7 +37,7 @@ router.get('/:imageId', authenticateToken, async (req, res) => {
       query.severity = severity;
     }
 
-    console.log('🔍 Searching for feedback with query:', query);
+    console.log('Searching for feedback with query:', query);
     
     const feedback = await Feedback.find(query)
       .sort({ severity: -1, createdAt: -1 })
@@ -46,7 +46,7 @@ router.get('/:imageId', authenticateToken, async (req, res) => {
 
     const totalCount = await Feedback.countDocuments(query);
     
-    console.log('📊 Found', feedback.length, 'feedback items out of', totalCount, 'total');
+    console.log('Found', feedback.length, 'feedback items out of', totalCount, 'total');
 
     res.json({
       success: true,

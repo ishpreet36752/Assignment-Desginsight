@@ -26,7 +26,7 @@ class AIService {
         throw new Error('OpenRouter API key not configured. Please add OPENROUTER_API_KEY to your .env file');
       }
 
-      console.log('🔍 Analyzing image with OpenRouter GPT-4 Vision:', imageUrl);
+      console.log('Analyzing image with OpenRouter GPT-4 Vision:', imageUrl);
 
       const prompt = this.buildAnalysisPrompt(categories);
 
@@ -137,7 +137,7 @@ IMPORTANT:
    */
   parseAIResponse(responseText, provider) {
     try {
-      console.log('📝 Raw AI response:', responseText);
+      console.log('Raw AI response:', responseText);
 
       let cleanedText = responseText
         .replace(/```json\n?/g, '')
@@ -149,7 +149,7 @@ IMPORTANT:
         if (jsonMatch) cleanedText = jsonMatch[0];
       }
 
-      console.log('🧹 Cleaned response:', cleanedText);
+      console.log('Cleaned response:', cleanedText);
 
       const feedback = JSON.parse(cleanedText);
       const feedbackArray = Array.isArray(feedback) ? feedback : [feedback];
@@ -170,7 +170,7 @@ IMPORTANT:
           const originalRoles = item.targetRoles;
           const validatedRoles = this.validateTargetRoles(originalRoles);
           if (originalRoles && originalRoles.some(role => !['designer', 'reviewer', 'productManager', 'developer'].includes(role))) {
-            console.log('🔄 Role mapping:', originalRoles, '→', validatedRoles);
+            console.log('Role mapping:', originalRoles, '→', validatedRoles);
           }
           return validatedRoles;
         })(),

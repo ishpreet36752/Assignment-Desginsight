@@ -13,7 +13,7 @@ const { authenticateToken, optionalAuth } = require('../middlewares/auth');
 const cloudinary = require('../config/cloudinary');
 
 // Debug Cloudinary configuration
-console.log('🔧 Cloudinary Debug Info:');
+console.log('Cloudinary Debug Info:');
 console.log('CLOUDINARY_CLOUD_NAME:', process.env.CLOUDINARY_CLOUD_NAME);
 console.log('CLOUDINARY_API_KEY:', process.env.CLOUDINARY_API_KEY);
 console.log('CLOUDINARY_API_SECRET:', process.env.CLOUDINARY_API_SECRET ? '***SET***' : 'NOT SET');
@@ -93,7 +93,7 @@ router.post('/upload/:projectId', authenticateToken, upload.single('image'), asy
     }
 
     // Upload to Cloudinary
-    console.log('📤 Starting Cloudinary upload...');
+    console.log('Starting Cloudinary upload...');
     console.log('File buffer size:', req.file.buffer.length);
     console.log('File mimetype:', req.file.mimetype);
     console.log('File originalname:', req.file.originalname);
@@ -116,11 +116,11 @@ router.post('/upload/:projectId', authenticateToken, upload.single('image'), asy
         uploadOptions,
         (error, result) => {
           if (error) {
-            console.error('❌ Cloudinary upload error:', error);
+            console.error('Cloudinary upload error:', error);
             console.error('Error details:', JSON.stringify(error, null, 2));
             reject(error);
           } else {
-            console.log('✅ Cloudinary upload successful!');
+            console.log('Cloudinary upload successful!');
             console.log('Result:', result);
             resolve(result);
           }
@@ -168,7 +168,7 @@ router.post('/upload/:projectId', authenticateToken, upload.single('image'), asy
     try {
       if (process.env.OPENROUTER_API_KEY && process.env.OPENROUTER_API_KEY !== 'your_openrouter_api_key_here') {
         // Use Cloudinary URL for AI analysis
-        console.log('🔗 Cloudinary URL for AI analysis:', cloudinaryResult.secure_url);
+        console.log('Cloudinary URL for AI analysis:', cloudinaryResult.secure_url);
         
         aiResults = await aiService.analyzeDesign(cloudinaryResult.secure_url, analysisCategories);
         console.log('AI analysis completed successfully:', aiResults.length, 'issues found');
@@ -194,9 +194,9 @@ router.post('/upload/:projectId', authenticateToken, upload.single('image'), asy
         };
       } else if (aiResults.length > 0) {
         // Save feedback items
-        console.log('💾 Saving feedback items:', aiResults.length);
+        console.log('Saving feedback items:', aiResults.length);
         const feedbackPromises = aiResults.map((feedbackData, index) => {
-          console.log(`📝 Saving feedback ${index + 1}:`, {
+          console.log(`Saving feedback ${index + 1}:`, {
             title: feedbackData.title,
             category: feedbackData.category,
             targetRoles: feedbackData.targetRoles
@@ -216,7 +216,7 @@ router.post('/upload/:projectId', authenticateToken, upload.single('image'), asy
         });
 
         const savedFeedback = await Promise.all(feedbackPromises);
-        console.log('✅ Successfully saved', savedFeedback.length, 'feedback items');
+        console.log('Successfully saved', savedFeedback.length, 'feedback items');
 
         image.metadata.aiAnalysisStatus = 'completed';
         image.aiAnalysis = {

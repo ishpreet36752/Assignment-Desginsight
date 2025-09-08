@@ -3,7 +3,7 @@
 const { execSync } = require('child_process');
 const path = require('path');
 
-console.log('🧪 Running DesignSight Test Suite...\n');
+console.log('Running DesignSight Test Suite...\n');
 
 // Colors for console output
 const colors = {
@@ -25,10 +25,10 @@ function runCommand(command, cwd, description) {
       stdio: 'inherit',
       env: { ...process.env, NODE_ENV: 'test' }
     });
-    console.log(`${colors.green}✅ ${description} - PASSED${colors.reset}\n`);
+    console.log(`${colors.green}${description} - PASSED${colors.reset}\n`);
     return true;
   } catch (error) {
-    console.log(`${colors.red}❌ ${description} - FAILED${colors.reset}\n`);
+    console.log(`${colors.red}${description} - FAILED${colors.reset}\n`);
     return false;
   }
 }
