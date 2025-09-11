@@ -44,7 +44,7 @@ class AIService {
             }
           ],
           max_tokens: 2000,
-          temperature: 0.4 // Slightly higher for more varied responses
+          temperature: 0.4 
         },
         {
           headers:{

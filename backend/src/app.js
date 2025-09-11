@@ -7,7 +7,7 @@ const path = require('path');
 
 // Import routes
 const authRoutes = require('./routes/auth');
-const uploadRoutes = require('./routes/upload');
+// const uploadRoutes = require('./routes/upload');
 const imageRoutes = require('./routes/images');
 const projectRoutes = require('./routes/projects');
 const feedbackRoutes = require('./routes/feedback');
@@ -71,7 +71,7 @@ app.get('/health', (req, res) => {
 
 // API routes
 app.use('/api/auth', authRoutes);
-app.use('/api/upload', uploadRoutes);
+// app.use('/api/upload', uploadRoutes);
 app.use('/api/images', imageRoutes);
 app.use('/api/projects', projectRoutes);
 app.use('/api/feedback', feedbackRoutes);
@@ -99,11 +99,11 @@ app.get('/api', (req, res) => {
         update: 'PUT /api/projects/:id',
         delete: 'DELETE /api/projects/:id'
       },
-      upload: {
-        upload: 'POST /api/upload',
-        get: 'GET /api/upload/:id',
-        providers: 'GET /api/upload/providers'
-      },
+      // upload: {
+      //   upload: 'POST /api/upload',
+      //   get: 'GET /api/upload/:id',
+      //   providers: 'GET /api/upload/providers'
+      // },
       images: {
         upload: 'POST /api/images/upload/:projectId',
         get: 'GET /api/images/:imageId',
